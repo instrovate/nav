@@ -1,0 +1,45 @@
+{
+  "name": "first-project",
+  "version": "1.0.0",
+  "description": "this is my first project in node js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "devStart": "nodemon app.js"
+  },
+  "engines": {
+    "node": "12.16.x",
+    "npm": "6.x",
+    "yarn": "1.x"
+  },
+  "author": "markup",
+  "license": "ISC",
+  "dependencies": {
+    "admin-bro": "^2.2.4",
+    "admin-bro-expressjs": "^2.0.1",
+    "admin-bro-mongoose": "^0.5.0",
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "express-session": "^1.17.0",
+    "flash-express": "^1.0.4",
+    "git": "^0.1.5",
+    "jade": "^1.11.0",
+    "method-override": "^3.0.0",
+    "mongodb": "^3.5.5",
+    "mongodb-autoincrement": "^1.0.1",
+    "mongoose": "^5.9.2",
+    "multer": "^1.4.2",
+    "node-pre-gyp": "^0.14.0",
+    "nodemailer": "^6.4.8",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-session": "^1.0.2",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

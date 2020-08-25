@@ -1,0 +1,50 @@
+html
+  head
+    
+    title Chapter Panel
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' type='text/javascript')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' type='text/javascript')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    
+  body
+   include inc/logged-in-header
+   div.container
+    .row
+     ul(class="nav nav-tabs" id="myTab" role="tablist")
+      li(class="nav-item active")
+       a(class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+      aria-selected="true") Curriculum
+      li(class="nav-item")
+       a(class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+      aria-selected="false") About this Course
+     div(class="tab-content" id="myTabContent")
+      div(class="tab-pane fade active in" id="home" role="tabpanel" aria-labelledby="home-tab") 
+       each course in courseData
+        div(class="col-md-12")
+         h2(class="course_nav")= course.courseName+" Overview"
+          each chapter in chapterData
+           h3(class="chapter_nav")= chapter.name
+           - var n = 0
+           while n < 100
+            each section in chapter.chapterdetails
+             if section.order==n
+              h4(class="section_nav")
+               a(href="/view-section/"+course._id+'/'+section._id)
+                if section.sectionType =='text'
+                 img(src="/uploads/icons/icon.png" width="40")
+                else if section.sectionType =='video'
+                 img(src="/uploads/icons/video.png" width="40")
+                else if section.sectionType =='pdf'
+                 img(src="/uploads/icons/pdf.png" width="40")
+                else if section.sectionType =='quiz'
+                 img(src="/uploads/icons/quiz.png" width="40")
+                else if section.sectionType =='url'
+                 img(src="/uploads/icons/url.png" width="40")
+                =section.sectionName
+            -n++
+      div(class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab") 
+       each course in courseData
+        p(class="chapter_nav1") !{course.courseDescription}
+   include inc/footer

@@ -1,0 +1,178 @@
+doctype html
+html
+  head
+    title Chapter Panel
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/views/css/style.css")
+    style  .name{min-height:20px !important;} body {margin-top:0}  li{list-style:none; width:25%; float:left; padding:15px; text-align:center;} .name {font-size:14px; font-weight:normal; text-transform:capitalize;} .description{font-size:14px;}
+  body
+
+    .container.breadcrumb
+      each ch in chapters
+       a(href="/admin") Dashboard 
+       span >
+       a(href="/admin/add-course") Courses
+       span >
+       a(href="/admin/chapter/"+ch.courseID) Chapters
+       span >
+       span
+       a(href="/admin/sectionType/"+ch._id)=ch.chapterName
+       span >
+       span=sectionType
+    div.container
+     .row
+       h1.col-md-12.align_center Enter Section Details Here...
+       form(method='POST' action='/admin/insert_section' enctype='multipart/form-data')
+        .form-group
+         label Enter Section Name
+         input(type="text", name="sectionname", class="form-control name" required)
+        .row
+         .col-md-6
+          label Enter First Question
+          textarea(name="quiz1",class="form-control" style="height:40px; width:100%" required)
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint1",class="form-control" style="height:40px; width:100%" required)
+        .row
+         .col-md-6
+          label Enter 2nd Question
+          textarea(name="quiz2",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint2",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 3rd Question
+          textarea(name="quiz3",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint3",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 4th Question
+          textarea(name="quiz4",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint4",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 5th Question
+          textarea(name="quiz5",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint5",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 6th Question
+          textarea(name="quiz6",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint6",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 7th Question
+          textarea(name="quiz7",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint7",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 8th Question
+          textarea(name="quiz8",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint8",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 9th Question
+          textarea(name="quiz9",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint9",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 10th Question
+          textarea(name="quiz10",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint10",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 11th Question
+          textarea(name="quiz11",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint11",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 12th Question
+          textarea(name="quiz12",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint12",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 13th Question
+          textarea(name="quiz13",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint13",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 14th Question
+          textarea(name="quiz14",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint14",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 15th Question
+          textarea(name="quiz15",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint15",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 16th Question
+          textarea(name="quiz16",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint16",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 17th Question
+          textarea(name="quiz17",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint17",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 18th Question
+          textarea(name="quiz18",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint18",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 19th Question
+          textarea(name="quiz19",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint19",class="form-control" style="height:40px; width:100%" )
+        .row
+         .col-md-6
+          label Enter 20th Question
+          textarea(name="quiz20",class="form-control" style="height:40px; width:100%" )
+         .col-md-6
+          label Enter Question Hint
+          textarea(name="hint20",class="form-control" style="height:40px; width:100%" )
+        input(type="hidden", name="chapter_id", value=id)
+        input(type="hidden", name="sectionType" value=sectionType)
+        input(type="hidden", name="sectionorder" value=order)
+        input(type="hidden", name="admin_id" value=admin_id)
+        input(type="submit",class="btn btn-primary", name="name", value="submit" style="margin-top:15px;")
+      
+    
+style label{margin-top:20px;} textarea.form-control{min-height:100px;} .container{background:#f3f3f3; margin-top: 60px; padding-bottom: 30px;}.align_center {text-align:center;}h1 {margin-top: 40px;font-size: 28px;}form{max-width: 800px;  margin: 0 auto; margin-top: 40px; width:100%}
+     

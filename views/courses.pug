@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title Chapters
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' type='text/javascript')
+    script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' type='text/javascript')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    
+  body
+    include inc/logged-in-header
+    div(class="course_nav")
+      div(class="container")
+       div(class="row")
+        each course in courseData
+         div(class="col-md-4")
+          a(href=`/view-course/`+ course._id)
+           div(class="course_grid")
+            if course.courseImg!=''
+             img(src="/uploads/"+course.courseImg width="300" height="200")
+            else
+             img(src="https://cc.sj-cdn.net/instructor/1bcltqjbx6dm5-looker-university/courses/3qcxjuzhfe3xp/promo-image.1532039654.png" width="300" height="200")
+            div.name= course.courseName
+            if course.courseAbout!=undefined
+             -var t = course.courseAbout
+             -var myst = t.substring(0,120)
+             div.description= myst
+
+    include inc/footer
+      
+
+

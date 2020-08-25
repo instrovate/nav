@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+   title Chapter Panel
+   meta(name="viewport" content="width=device-width, initial-scale=1")
+   link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+   link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+   script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' type='text/javascript')
+   script(src='https://stackpath.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' type='text/javascript')
+   
+   meta(name="viewport" content="width=device-width, initial-scale=1")
+   script(src="/views/js/myscript.js" type='text/javascript')
+  
+   link(rel="stylesheet", href="/views/css/style.css")
+  body
+    include ../inc/header
+    div.container.steps_panel
+       ul.steps
+        li Step 1
+        li Step 2
+        li Step 3
+        li.active_nav Step 4
+       form(action="/apply-display-profile" method="post" enctype='multipart/form-data')
+        .form-group
+          
+          //img(id="output" width="200" style="display:block")
+          label( style=" padding:15px 0 0;") Click Here to Upload Resume
+        .form-group
+          
+          input(type="file" accept="doc/*|docx/*|pdf/*|" id="file" onchange="loadFile(event)"  name='image' class="form-control" required)
+          
+        input(type="hidden" name="id" value=id)
+        .form-group
+         input(type="checkbox" required) 
+         a(target="_blank" href="http://instrovate.com/privacy-policy" style="margin-left:15px") Submitted under T&C and Privacy Policy
+        input(type='submit' name='apply' value='Apply' class="btn btn-success")
+
+    include ../inc/footer
+    script var loadFile=function(event){var image=document.getElementById('output');image.value=URL.createObjectURL(event.target.files[0]);image.src=URL.createObjectURL(event.target.files[0]);};
+    style .btn-success{margin-top:15px;} .container{ margin-top: 0px; padding-bottom: 30px;}.align_center {text-align:center;}h1 {margin-top: 40px;font-size: 28px;}form{max-width: 700px;  margin: 0 auto; margin-top: 20px; width:100%}

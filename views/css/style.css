@@ -1,0 +1,64 @@
+#outerContainer #mainContainer div.toolbar{display: none !important; /* hide PDF viewer toolbar */}
+
+
+.nav-link:focus {outline : none; border:0;} 
+.nav > li > a{margin:0; font-size:18px;} 
+.chapter_nav1 {padding-top:20px;} 
+.section_left h6{font-size:15px;} 
+.section_left h5{font-size:20px; line-height:30px;} 
+.section_left h4{text-align:center; font-size:24px; line-height:44px;} 
+.section_left{background:#f3f3f3; border-right:1px solid #ddd; overflow-y:scroll; min-height:500px;}
+.section_right{margin-left:20px; width:100%; background:#f3f3f3; border:1px solid #ddd; padding:15px; box-shadow:3px 5px 5px #ddd;}
+.course_nav{text-transform:capitalize; border-bottom:1px solid #ddd; padding-bottom:15px;} 
+.chapter_nav{text-transform:uppercase; font-size:18px;} 
+.section_nav {padding-left:15px; text-transform:capitalize}
+.course_nav a:hover .course_grid{border-color:#49df49;} 
+.course_nav a {text-decoration:none; color:#333;} 
+body{float:left; width:100%; margin-top:80px; font-family:"lato", sans-serif;} 
+.name {font-size:20px; font-weight:bold; text-transform:uppercase} 
+.description{font-size:14px; font-weight:normal;} 
+.course_nav .col-md-4 {padding:10px} 
+.course_nav .course_grid {background:#f3f3f3; border:1px solid #ddd; padding:20px;} 
+footer {width:100%; padding:15px; margin-bottom:0; background:#f3f3f3; float:left; text-align:center; margin-top:50px;} 
+.course_grid img {width:100%; margin-bottom:10px;}
+.hint p{display:none;}
+.hint_span {cursor:pointer; color:#666; width: 100%; float:left;}
+.hint {cursor:pointer; width: 100%; float:left; border:1px solid #777; padding:5px 10px; margin-bottom: 15px;}
+.questions {float:left; width: 100%;}
+.usertype label {float:left; line-height:40px;}
+.usertype input {width:20px; float: left;}
+.steps .col-md-3{padding:15px; text-align: center; background:#86fdcf;}
+.steps .active_nav {background:#42d03f; color:#fff}
+.list a{text-transform:capitalize} .list{max-height:750px; overflow-y:scroll;} .list p{margin-bottom:5px;} 
+.breadcrumb {padding-bottom:20px !important;}
+.breadcrumb span {margin:0 3px; text-transform: capitalize;}
+textarea.form-control{min-height:320px;}
+.right_nav {float:right; width:70%; text-align: right;}
+.right_nav a {background:#0069d9; padding:5px 15px 8px; color:#fff;}
+nav .container {padding-bottom:0; background:transparent;}
+.ql-editor {min-height:250px; background:#fff}
+.steps_panel {max-width:800px; padding:45px 15px; border-radius: 15px;border: 1px solid #ddd;box-shadow: 5px 5px 25px 5px #ddd;}
+.steps_panel form {max-width: 500px;  margin: 0 auto; margin-top: 50px; width:100%; border-radius:5px; background:#f1f1f1; padding:20px;}
+ul.steps { max-width: 500px; width: 100%; margin:0 auto; padding:0}
+ul.steps li {background:#d5e3ff;list-style: none; font-weight:bold; display: inline; float: left; padding:8px 30px; width:22%; margin:0 1.5%; text-align: center;}
+ul.steps li:first-child{margin-left:0; width:23.5%}
+ul.steps li:last-child{margin-right:0; width:23.5%}
+.steps_panel form h5 {font-size:20px; font-weight: 700; padding-left: 15px;}
+.steps_panel input[type="date"] {line-height: 15px;}
+.steps_panel textarea {min-height:120px;}
+.expand, .contract {cursor:pointer; position: absolute;
+    right: 15px;
+    top: 15px;}
+.contract{display:none;}
+
+.section_right.fullscreen{
+    z-index: 9999; 
+    width: 100%; 
+    height: 100%; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+ }
+ .navbar {min-height:75px;}
+ .navbar > .container .navbar-brand {padding:0 15px;}
+ .navbar-right {margin-top:10px}

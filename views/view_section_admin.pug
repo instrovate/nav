@@ -1,0 +1,78 @@
+html
+  head
+    
+    title Chapter Panel
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' type='text/javascript')
+    script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' type='text/javascript')
+    script(src="/views/js/myscript.js" type='text/javascript')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    
+  body
+   include inc/logged-in-header
+   div.container
+    .row
+     div(class="col-md-3 section_left")
+      h4 Welcome to Node
+      each chapter in chapterdata
+       h5=chapter.name
+        - var n = 0
+        while n < 100
+         each sect in chapter.chapterdetails
+          if sect.order==n
+           h6 
+            a(href='/admin/view-section/'+chapter.courseID+'/'+sect._id)
+             if sect.sectionType =='text'
+               img(src="/uploads/icons/icon.png" width="35")
+             else if sect.sectionType =='video'
+               img(src="/uploads/icons/video.png" width="35")
+             else if sect.sectionType =='pdf'
+               img(src="/uploads/icons/pdf.png" width="35")
+             else if sect.sectionType =='quiz'
+               img(src="/uploads/icons/quiz.png" width="35")
+             else if sect.sectionType =='url'
+               img(src="/uploads/icons/url.png" width="35")
+             =sect.sectionName
+         -n++
+     
+     div(class="col-md-9")
+       each section in sectiondata
+        div(class="section_right")
+         h1(class="section_nav1")= section.sectionName
+         if section.sectionType=='text'
+          p(class="section_description") !{section.sectionDescription}
+         else if section.sectionType=='pdf'
+          div(class="attachment_nav")
+           span(class="new_tab" style="position:absolute; right:15px; top:50px;")
+            a(target="_blank" style="color:#333" href="http://lms.instrovate.com/uploads/"+section.pdf) Open Pdf in New Tab
+           span(class="expand")
+            img(src="/uploads/expand.png" width="20")
+           span(class="contract")
+            img(src="/uploads/contract.png" width="20")
+           #adobe-dc-view
+           script(src="https://documentcloud.adobe.com/view-sdk/main.js")
+           
+           script(type="text/javascript").
+            document.addEventListener("adobe_dc_view_sdk.ready", function(){
+              
+            var adobeDCView = new AdobeDC.View({clientId: "02463f3e82dd4e5eb349f565e0f5b454", divId: "adobe-dc-view"});
+            adobeDCView.previewFile({
+            content:{location: {url: "http://lms.instrovate.com/uploads/#{section.pdf}"}},
+            metaData:{fileName: "Bodea Brochure.pdf"}
+            }, {showAnnotationTools: false, showDownloadPDF: false, showPrintPDF: false});
+            });
+         else if section.sectionType=='video' || section.sectionType=='url'
+          div(class="attachment_nav")
+           iframe( src=section.url  width="100%" height="450" )
+         else if section.sectionType='quiz'
+          div(class="questions")
+           each sec in section.ques
+            h4=sec.question
+            div(class="hint")
+             span(class="hint_span") Click for Hint
+             p=sec.hint
+            
+           
+   include inc/footer 
+   
