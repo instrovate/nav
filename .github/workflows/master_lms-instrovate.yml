@@ -18,7 +18,7 @@ jobs:
     - name: Set up Node.js version
       uses: actions/setup-node@v1
       with:
-        node-version: '12.13.0'
+        node-version: '10.14.1'
 
     - name: npm install, build, and test
       run: |
@@ -31,5 +31,5 @@ jobs:
       with:
         app-name: 'lms-instrovate'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_e76ccc97e3cb4d3ca92b0d059542e7b2 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_2c4cf7eceba8473ea847d1fce626f3da }}
         package: .
