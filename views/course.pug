@@ -23,7 +23,12 @@ html
        h1 Courses List
        each cour in courses
         p
-         a(href="/admin/chapter/"+cour._id)=cour.courseName
+         if admin_role==1
+          a(href="/admin/chapter/"+cour._id)=cour.courseName
+         else
+          if cour.addedBy==admin_id
+           a(href="/admin/chapter/"+cour._id)=cour.courseName
+
       .col-md-9
        h1.align_center Add Course
        form(method='POST' action='/insert_course' enctype= "multipart/form-data")
