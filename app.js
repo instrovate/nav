@@ -75,7 +75,7 @@ app.get("/admin/courses", async (req, res) => {
     const posts = await coursemodel.find();
     var string = JSON.stringify(posts);
     var courseData = JSON.parse(string);
-    res.render('courses_admin',{courseData:courseData});
+    res.render('courses_admin', { courseData: courseData, admin_id: req.session.adminUser._id, admin_role:req.session.adminUser.role});
 });
 
 app.use('/uploads', express.static('/uploads'));
@@ -164,7 +164,7 @@ app.post('/apply-display-profile', upload1.single('image'), function(req, res, f
 // Course Add and Insert Routes
 app.get('/admin/add-course', async(req,res)=>{
     const courses = await coursemodel.find();
-    res.render('course',{courses:courses, admin_id:req.session.adminUser._id});
+    res.render('course', { courses: courses, admin_id: req.session.adminUser._id, admin_role: req.session.adminUser.role});
     });
 
 
@@ -314,7 +314,7 @@ var query = { courseID: mongoose.Types.ObjectId(req.params.id)}
 var query1 = {_id:mongoose.Types.ObjectId(req.params.id)}
 const chapters = await chaptermodel.find(query);
 const courses = await coursemodel.find(query1);
-res.render('chapter', {'id': req.params.id, chapters:chapters, courses:courses, admin_id:req.session.adminUser._id});
+    res.render('chapter', { 'id': req.params.id, chapters: chapters, courses: courses, admin_id: req.session.adminUser._id, admin_role: req.session.adminUser.role});
 });
 
 
