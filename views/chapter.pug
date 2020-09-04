@@ -22,8 +22,12 @@ html
       .col-md-3.list
        h1 Chapter List
        each chap in chapters
-        p
-         a(href="/admin/sectionType/"+chap._id)=chap.chapterName
+         p
+          if admin_role==1
+           a(href="/admin/sectionType/"+chap._id)=chap.chapterName
+          else
+           if chap.addedBy==admin_id
+            a(href="/admin/sectionType/"+chap._id)=chap.chapterName
       .col-md-9
        h1.align_center Add Chapter Here...
        form(method='POST' action='/insert_chapter')
