@@ -13,18 +13,33 @@ html
       div(class="container")
        div(class="row")
         each course in courseData
-         div(class="col-md-4")
-          a(href=`/admin/view-course/`+ course._id)
-           div(class="course_grid")
-            if course.courseImg!=undefined
-             img(src="/uploads/"+course.courseImg width="300" height="200")
-            else
-             img(src="https://cc.sj-cdn.net/instructor/1bcltqjbx6dm5-looker-university/courses/3qcxjuzhfe3xp/promo-image.1532039654.png" width="300" height="200")
-            div.name= course.courseName
-            if course.courseAbout!=undefined
-             -var t = course.courseAbout
-             -var myst = t.substring(0,120)
-             div.description= myst
+         if admin_role==1
+          div(class="col-md-4")
+           a(href=`/admin/view-course/`+ course._id)
+            div(class="course_grid")
+             if course.courseImg!=undefined
+              img(src="/uploads/"+course.courseImg width="300" height="200")
+             else
+              img(src="https://cc.sj-cdn.net/instructor/1bcltqjbx6dm5-looker-university/courses/3qcxjuzhfe3xp/promo-image.1532039654.png" width="300" height="200")
+             div.name= course.courseName
+             if course.courseAbout!=undefined
+              -var t = course.courseAbout
+              -var myst = t.substring(0,120)
+              div.description= myst
+         else
+          if course.addedBy==admin_id
+           div(class="col-md-4")
+            a(href=`/admin/view-course/`+ course._id)
+             div(class="course_grid")
+              if course.courseImg!=undefined
+               img(src="/uploads/"+course.courseImg width="300" height="200")
+              else
+               img(src="https://cc.sj-cdn.net/instructor/1bcltqjbx6dm5-looker-university/courses/3qcxjuzhfe3xp/promo-image.1532039654.png" width="300" height="200")
+              div.name= course.courseName
+              if course.courseAbout!=undefined
+               -var t = course.courseAbout
+               -var myst = t.substring(0,120)
+               div.description= myst
 
     include inc/footer
       
