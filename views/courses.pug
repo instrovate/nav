@@ -16,7 +16,7 @@ html
          div(class="col-md-4")
           a(href=`/view-course/`+ course._id)
            div(class="course_grid")
-            if course.courseImg!=''
+            if course.courseImg!=undefined
              img(src="/uploads/"+course.courseImg width="300" height="200")
             else
              img(src="https://cc.sj-cdn.net/instructor/1bcltqjbx6dm5-looker-university/courses/3qcxjuzhfe3xp/promo-image.1532039654.png" width="300" height="200")
