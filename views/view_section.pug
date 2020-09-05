@@ -45,7 +45,7 @@ html
          else if section.sectionType=='pdf'
           div(class="attachment_nav")
            span(class="new_tab" style="position:absolute; right:15px; top:50px;")
-            a(target="_blank" style="color:#333" href="http://lms.instrovate.com/uploads/"+section.pdf) Open Pdf in New Tab
+            a(target="_blank" style="color:#333" href="https://lms.instrovate.com/uploads/"+section.pdf) Open Pdf in New Tab
            span(class="expand")
             img(src="/uploads/expand.png" width="20")
            span(class="contract")
@@ -56,9 +56,9 @@ html
            script(type="text/javascript").
             document.addEventListener("adobe_dc_view_sdk.ready", function(){
               
-            var adobeDCView = new AdobeDC.View({clientId: "02463f3e82dd4e5eb349f565e0f5b454", divId: "adobe-dc-view"});
+            var adobeDCView = new AdobeDC.View({clientId: "59d2437e728d4848b00f1ea85ff8f71b", divId: "adobe-dc-view"});
             adobeDCView.previewFile({
-            content:{location: {url: "http://lms.instrovate.com/uploads/#{section.pdf}"}},
+            content:{location: {url: "https://lms.instrovate.com/uploads/#{section.pdf}"}},
             metaData:{fileName: "Bodea Brochure.pdf"}
             }, {showAnnotationTools: false, showDownloadPDF: false, showPrintPDF: false});
             });
